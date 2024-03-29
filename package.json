@@ -10,6 +10,10 @@
     ".": {
       "import": "./dist/vue-bento-layout.es.js",
       "require": "./dist/vue-bento-layout.umd.js"
+    },
+    "./dist/style.css":{
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "homepage": "https://github.com/lugeib/vue-bento",
