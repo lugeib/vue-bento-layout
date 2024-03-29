@@ -16,13 +16,13 @@
       "require": "./dist/style.css"
     }
   },
-  "homepage": "https://github.com/lugeib/vue-bento",
+  "homepage": "https://github.com/lugeib/vue-bento-layout",
   "description": "Beginner plugin for a quick Bento Layout on your Vue App",
   "repository": {
-    "url": "https://github.com/lugeib/vue-bento",
+    "url": "https://github.com/lugeib/vue-bento-layout",
     "type": "git"
   },
-  "bugs": "https://github.com/lugeib/vue-bento/issues",
+  "bugs": "https://github.com/lugeib/vue-bento-layout/issues",
   "author": "Gerardo Ibarra <gibarra@mexicalisystems.com>",
   "license": "MIT",
   "scripts": {
