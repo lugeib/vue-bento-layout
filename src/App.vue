@@ -36,6 +36,3 @@
     
   </bento-grid>
 </template>
-<style lang="scss">
-  @import "./assets/sass/App.scss"
-</style>

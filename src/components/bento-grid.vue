@@ -1,18 +1,62 @@
 <template>
-    <section class="vue-bento-grid" :style="gridStyle" >
-        <slot />
-    </section>
+  <section class="vue-bento-grid" :style="gridStyle">
+    <slot />
+  </section>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 const props = defineProps({
-    backgroundColor: {default: 'transparent', type: String},
-    gap:{default:0.75, type: Number}
+  backgroundColor: { default: "transparent", type: String },
+  gap: { default: 0.75, type: Number },
 });
 
 const gridStyle = ref({
-    backgroundColor: props.backgroundColor,
-    gap: `${props.gap}em`
-})
+  backgroundColor: props.backgroundColor,
+  gap: `${props.gap}em`,
+});
 </script>
+<style lang="scss">
+.vue-bento-grid {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+
+  .vue-bento-card {
+    transition: all 0.05s ease-in-out;
+    display: flex;
+
+    &.hovereable {
+      &:hover {
+        -webkit-box-shadow: 0em 0em 0.3em 0em rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0em 0em 0.3em 0em rgba(0, 0, 0, 0.5);
+        box-shadow: 0em 0em 0.3em 0em rgba(0, 0, 0, 0.5);
+        scale: 1.05;
+      }
+    }
+
+    padding: 1.5em;
+    border-radius: 0.75em;
+
+    &.tallest {
+      grid-row: span 4;
+    }
+    &.taller {
+      grid-row: span 3;
+    }
+    &.tall {
+      grid-row: span 2;
+    }
+    &.wide {
+      grid-column: span 2;
+    }
+    &.wider {
+      grid-column: span 3;
+    }
+    &.widest {
+      grid-column: span 4;
+    }
+  }
+}
+</style>
