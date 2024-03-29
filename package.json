@@ -1,13 +1,15 @@
 {
   "name": "vue-bento-layout",
-  "version": "0.1.0",
-  "files": ["dist"],
+  "version": "0.1.2",
+  "files": [
+    "dist"
+  ],
   "main": "./dist/vue-bento-layout.umd.js",
   "module": "./dist/vue-bento-layout.es.js",
-  "exports":{
-    ".":{
-      "import":"./dist/vue-bento-layout.es.js",
-      "require":"./dist/vue-bento-layout.umd.js"
+  "exports": {
+    ".": {
+      "import": "./dist/vue-bento-layout.es.js",
+      "require": "./dist/vue-bento-layout.umd.js"
     }
   },
   "homepage": "https://github.com/lugeib/vue-bento",
