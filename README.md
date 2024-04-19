@@ -26,8 +26,8 @@ bun i vue-bento-layout
 ## Initialization
 
 Just import the vue-bento-layout plugin and css file into your `main.js` file and make your vue app use the plugin.
-``` import { createApp } from 'vue'
-import './style.css'
+```
+ import { createApp } from 'vue'
 import App from './App.vue'
 import vueBentoLayout from 'vue-bento-layout';
 import "../node_modules/vue-bento-layout/dist/sass/main.scss"
