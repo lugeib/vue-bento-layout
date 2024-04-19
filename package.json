@@ -1,6 +1,6 @@
 {
   "name": "vue-bento-layout",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "files": [
     "dist"
   ],
@@ -10,10 +10,6 @@
     ".": {
       "import": "./dist/vue-bento-layout.es.js",
       "require": "./dist/vue-bento-layout.umd.js"
-    },
-    "./dist/style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
     }
   },
   "homepage": "https://github.com/lugeib/vue-bento-layout",

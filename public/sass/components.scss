@@ -1,0 +1,74 @@
+.vue-bento-grid {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat($grid-columns-length-default, 1fr);
+  grid-auto-rows: 1fr;
+  gap: $grid-gap-base-unit;
+
+  @for $times from 2 through $grid-gap-max-times-multiplier{
+    &.grid-gap-#{$times}x{
+        gap: calc($grid-gap-base-unit * #{$times});
+    }
+  }
+
+  .vue-bento-card {
+    
+    transition: all $transition-speed-base-unit ease-in-out;
+    display: flex;
+    padding: 1.5em;
+    border-radius: 0.75em;
+
+    @for $times from 2 through $transition-speed-max-times-multiplier{
+        &.transition-speed-#{$times}x{
+            transition: all calc($transition-speed-base-unit * #{$times}) ease-in-out;
+        }
+      }
+
+    &.hovereable {
+      cursor: pointer;
+
+      &:hover {
+
+        box-shadow: 0px 0px $card-box_shadow_length-base-unit 0px rgba(0, 0, 0, 0.5);
+        scale: $card-hover-scale-base-unit;
+        
+        @for $times from 2 through $card-box_shadow_length-max-times-multiplier{
+            &.card-shadow-#{$times}x{
+                box-shadow: 0px 0px calc($card-box_shadow_length-base-unit * #{$times}) 0px rgba(0, 0, 0, 0.5);
+            }
+          }
+
+        @for $times from 2 through $card-hover-scale-max-times-multiplier{
+            &.hover-scale-#{$times}x{
+                scale: calc($card-hover-scale-base-unit + calc($card-hover-scale-base-unit-step * #{$times}));
+            }
+        }
+      }
+    }
+
+    @for $colCount from 2 through $grid-columns-length-default{
+        &.wide-#{$colCount}x{
+            grid-column: span #{$colCount};
+        }
+    }
+    @for $rowCount from 2 through $grid-rows-length-default{
+        &.tall-#{$rowCount}x{
+            grid-row: span #{$rowCount};
+        }
+    }
+  }
+}
+
+.bento-gallery{
+  height: 650px;
+  .vue-bento-card:has(img){
+    padding: 0;
+    overflow: hidden;
+  }
+  .vue-bento-card {
+    img{
+      width: 100%;
+    object-fit: cover;
+    }
+  }
+}
