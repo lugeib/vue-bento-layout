@@ -29,38 +29,47 @@
       </bento-grid>
     </section>
     <section class="gallery">
-      <bento-gallery :images="images" :imagesAreHovereable="true" />
+      <bento-gallery :sourceList="media" :animate="true" />
     </section>
   </main>
 </template>
 <script setup>
-let images = [
+let media = [
   {
     url: 'https://plus.unsplash.com/premium_photo-1665929001759-be3a55a0ce3a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     wide:2,
-    tall:2,
-    hovereable:true
+    tall:4,
+    hovereable:true,
+    type:'image'
   },
   {
-    url: 'https://images.unsplash.com/photo-1712698396006-1996dc7cb2cc?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    wide:2,
-    tall:4
+    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    wide:1,
+    tall:2,
+    hovereable:true,
+    type:'video',
+    muted:true
+  },
+  {
+    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+    wide:1,
+    tall:2,
+    type:'video'
   },
   {
     url: 'https://images.unsplash.com/photo-1712081024194-bd8d6af8fd68?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    wide:'',
-    tall:''
+    wide:1,
+    tall:2,
+    hovereable:true,
+    type:'image'
   },
   {
     url: 'https://images.unsplash.com/photo-1711997632197-e09b5c59605d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    wide:'',
-    tall:'2'
+    wide:1,
+    tall:2,
+    type:'image'
   },
-  {
-    url: 'https://plus.unsplash.com/premium_photo-1668708034541-4ba9a33fae3a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    wide:'',
-    tall:''
-  },
+ 
   
 ];
 </script>
