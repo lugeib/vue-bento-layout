@@ -43,18 +43,18 @@ app.mount('#app');
 # Components
 
 There's only 3 components to learn (in about 5 mins), in Vue Bento Layout
-### `<bento-grid>`
  ---
+### `<bento-grid>`
  Bento grid is the one in charge of containing the different rows and columns that you'll configure for your bento.
  Pretty much just a container for styling and well... containment for the next component.
 
- ### `<bento-card>`
  ---
+ ### `<bento-card>`
  The core of the bento layout, a card is the container for whatever content You'd like to put inside of it, these are the elements that'll move around, grow, shrink as you want them to.
  Highly customizable, they come with **NO STYLING**, not more than a little border-radius, some padding and box-shadow when using hovereable class.
  
-  ### `<bento-gallery>`
  ---
+  ### `<bento-gallery>`
 Bento Gallery is an implementation of bento-grid and bento-cards to create a simple but cool-looking gallery of images (only images for now), simply pass an array of objects to the component and bentify your gallery 🍱
 
 Uses array of objects:
@@ -66,9 +66,11 @@ Uses array of objects:
    hovereable: Boolean (e.g. False | True)
 }
 ```
+ ---
+### `<bento-checkbox>`
+Bento checkbox is an implementation of bento-cards to create a simple but cool-looking array of checkboxes with a smooth check animation and overlaying effect to the selected cards to ensure visibility and distinction from those unchecked cards, just pass your v-model property and you're set.
 
-
-
+ ---
 # Examples of usage 📝
 
 Below You'll find a single file component where you can see how the components are used, **note the *dynamic classes***.
@@ -108,6 +110,20 @@ We'll get to that after the example:
     <section class="gallery">
       <bento-gallery :images="images" :imagesAreHovereable="true" />
     </section>
+    <section>
+      <h2>Bento checkbox {{ checkedValues }}</h2>
+      <bento-grid>
+        <bento-checkbox v-model="checkedValues[0]">
+          <img src="https://plus.unsplash.com/premium_photo-1665929001759-be3a55a0ce3a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </bento-checkbox>
+        <bento-checkbox v-model="checkedValues[1]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </bento-checkbox>
+        <bento-checkbox v-model="checkedValues[2]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </bento-checkbox>
+      </bento-grid>
+    </section>
   </main>
 </template>
 <script setup>
@@ -140,6 +156,7 @@ let images = [
   },
   
 ];
+const checkedValues = ref([false, true, false]);
 </script>
 <style lang="scss">
   main > section {
