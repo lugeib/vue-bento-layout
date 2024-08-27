@@ -12,6 +12,7 @@ vue-bento-layout is a package that helps you (in the most basic way) with creati
 
 - Simple to use `bento-grid` & `bento-card` global components (so no need to import _here_ and _there_).
 - `bento-gallery` global component to bentify your image collections.
+- `bento-checkbox` bento-card made into checkbox.
 
 ## Installation
 
@@ -42,7 +43,7 @@ app.mount('#app');
 
 # Components
 
-There's only 3 components to learn (in about 5 mins), in Vue Bento Layout
+There's only 4 components to learn in Vue Bento Layout
  ---
 ### `<bento-grid>`
  Bento grid is the one in charge of containing the different rows and columns that you'll configure for your bento.
