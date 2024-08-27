@@ -1,0 +1,8 @@
+@keyframes dash{
+    from{
+        stroke-dashoffset: 150;
+    }
+    to{
+        stroke-dashoffset: 0;
+    }
+}

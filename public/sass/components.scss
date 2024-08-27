@@ -64,6 +64,49 @@
         grid-row: span #{$rowCount};
       }
     }
+
+    &.bento-checkbox-card{
+
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+      overflow: hidden;
+    
+      img {
+    
+        width: 100%;
+        object-fit: contain;
+    
+      }
+
+      &:active{
+        scale: calc($card-hover-scale-base-unit / 1.110);
+      }
+
+      &.--selected{
+        .content{
+          filter: brightness(0.75);
+        }
+      }
+
+      .checkmark{
+        position: absolute;
+        // z-index: 9;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        stroke-width: 2px;
+        stroke: #fff;
+        fill: transparent;
+        .path{
+          stroke-linecap: round;
+          stroke-dasharray: 150;
+          animation: dash 0.3s ease-out forwards;
+        }
+      }
+      
+    }
   }
 }
 
