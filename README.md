@@ -65,6 +65,7 @@ Uses array of objects:
    wide: Int, (e.g. 2|3|n  depending on Your configuration for the $grid-columns-length-default variable) 
    tall: Int, (e.g. 2|3|n  depending on Your configuration for the $grid-rows-length-default variable)
    hovereable: Boolean (e.g. False | True)
+   type: String, required (e.g. 'image' | 'video') 
 }
 ```
  ---
