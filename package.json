@@ -1,6 +1,6 @@
 {
   "name": "vue-bento-layout",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "files": [
     "dist"
   ],
@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "gsap": "^3.12.5",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vue-bento-layout": "file:"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
