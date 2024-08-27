@@ -1,6 +1,6 @@
 {
   "name": "vue-bento-layout",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "files": [
     "dist"
   ],
@@ -27,6 +27,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
     "vue": "^3.4.21"
   },
   "devDependencies": {

@@ -27,7 +27,7 @@ bun i vue-bento-layout
 
 Just import the vue-bento-layout plugin and css file into your `main.js` file and make your vue app use the plugin.
 ```
- import { createApp } from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import vueBentoLayout from 'vue-bento-layout';
 import "../node_modules/vue-bento-layout/dist/sass/main.scss"
@@ -55,7 +55,7 @@ There's only 3 components to learn (in about 5 mins), in Vue Bento Layout
  
   ### `<bento-gallery>`
  ---
-Bento Gallery is an implementation of bento-grid and bento-cards o create a simple but cool-looking gallery of images (only images for now), simply pass an array of objects to the component and bentify your gallery 🍱
+Bento Gallery is an implementation of bento-grid and bento-cards to create a simple but cool-looking gallery of images (only images for now), simply pass an array of objects to the component and bentify your gallery 🍱
 
 Uses array of objects:
 ```

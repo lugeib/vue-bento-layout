@@ -1,74 +1,181 @@
 .vue-bento-grid {
-  padding: 1em;
+  padding: 10px;
   display: grid;
   grid-template-columns: repeat($grid-columns-length-default, 1fr);
   grid-auto-rows: 1fr;
   gap: $grid-gap-base-unit;
 
-  @for $times from 2 through $grid-gap-max-times-multiplier{
-    &.grid-gap-#{$times}x{
-        gap: calc($grid-gap-base-unit * #{$times});
+  @for $times from 2 through $grid-gap-max-times-multiplier {
+    &.grid-gap-#{$times}x {
+      gap: calc($grid-gap-base-unit * #{$times});
     }
   }
 
   .vue-bento-card {
-    
     transition: all $transition-speed-base-unit ease-in-out;
     display: flex;
-    padding: 1.5em;
-    border-radius: 0.75em;
+    padding: 18px;
+    border-radius: 15px;
 
-    @for $times from 2 through $transition-speed-max-times-multiplier{
-        &.transition-speed-#{$times}x{
-            transition: all calc($transition-speed-base-unit * #{$times}) ease-in-out;
-        }
+    @for $times from 2 through $transition-speed-max-times-multiplier {
+      &.transition-speed-#{$times}x {
+        transition: all
+          calc($transition-speed-base-unit * #{$times})
+          ease-in-out;
       }
+    }
 
     &.hovereable {
-      cursor: pointer;
-
       &:hover {
-
-        box-shadow: 0px 0px $card-box_shadow_length-base-unit 0px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px $card-box_shadow_length-base-unit 0px
+          rgba(0, 0, 0, 0.5);
         scale: $card-hover-scale-base-unit;
-        
-        @for $times from 2 through $card-box_shadow_length-max-times-multiplier{
-            &.card-shadow-#{$times}x{
-                box-shadow: 0px 0px calc($card-box_shadow_length-base-unit * #{$times}) 0px rgba(0, 0, 0, 0.5);
-            }
-          }
+        z-index: 9;
 
-        @for $times from 2 through $card-hover-scale-max-times-multiplier{
-            &.hover-scale-#{$times}x{
-                scale: calc($card-hover-scale-base-unit + calc($card-hover-scale-base-unit-step * #{$times}));
-            }
+        @for $times from 2 through $card-box_shadow_length-max-times-multiplier
+        {
+          &.card-shadow-#{$times}x {
+            box-shadow: 0px
+              0px
+              calc($card-box_shadow_length-base-unit * #{$times})
+              0px
+              rgba(0, 0, 0, 0.5);
+          }
+        }
+
+        @for $times from 2 through $card-hover-scale-max-times-multiplier {
+          &.hover-scale-#{$times}x {
+            scale: calc(
+              $card-hover-scale-base-unit +
+                calc($card-hover-scale-base-unit-step * #{$times})
+            );
+          }
         }
       }
     }
 
-    @for $colCount from 2 through $grid-columns-length-default{
-        &.wide-#{$colCount}x{
-            grid-column: span #{$colCount};
-        }
+    @for $colCount from 2 through $grid-columns-length-default {
+      &.wide-#{$colCount}x {
+        grid-column: span #{$colCount};
+      }
     }
-    @for $rowCount from 2 through $grid-rows-length-default{
-        &.tall-#{$rowCount}x{
-            grid-row: span #{$rowCount};
+    @for $rowCount from 2 through $grid-rows-length-default {
+      &.tall-#{$rowCount}x {
+        grid-row: span #{$rowCount};
+      }
+    }
+
+    &.bento-checkbox-card{
+
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+      overflow: hidden;
+    
+      img {
+    
+        width: 100%;
+        object-fit: contain;
+    
+      }
+
+      &:active{
+        scale: calc($card-hover-scale-base-unit / 1.110);
+      }
+
+      &.--selected{
+        .content{
+          filter: brightness(0.75);
         }
+      }
+
+      .checkmark{
+        position: absolute;
+        // z-index: 9;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        stroke-width: 2px;
+        stroke: #fff;
+        fill: transparent;
+        .path{
+          stroke-linecap: round;
+          stroke-dasharray: 150;
+          animation: dash 0.3s ease-out forwards;
+        }
+      }
+      
     }
   }
 }
 
-.bento-gallery{
+.bento-gallery {
   height: 650px;
-  .vue-bento-card:has(img){
+
+  .vue-bento-card {
     padding: 0;
     overflow: hidden;
-  }
-  .vue-bento-card {
-    img{
+
+    img {
       width: 100%;
-    object-fit: cover;
+      object-fit: cover;
+    }
+    .video {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      video {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .playback-control {
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        transition: all $transition-speed-base-unit ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        .play-button {
+          display: inline-block;
+          position: absolute;
+          width: 64px;
+          height: 64px;
+          background: #fff;
+          transition: clip-path $transition-speed-base-unit ease;
+          
+        }
+        .play-button-before {
+          clip-path: polygon(0 0, 50% 25%, 50% 75%, 0% 100%);
+        }
+        .play-button-after {
+          clip-path: polygon(50% 25%, 100% 50%, 100% 50%, 50% 75%);
+        }
+
+        &.paused{
+          .play-button-before {
+            clip-path: polygon(0 0, 30% 0, 30% 100%, 0% 100%);
+          }
+          .play-button-after {
+            clip-path: polygon(70% 0, 100% 0, 100% 100%, 70% 100%);
+          } 
+        }
+      }
+      &:hover {
+        .playback-control {
+          visibility: visible;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
     }
   }
 }

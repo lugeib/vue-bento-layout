@@ -14,3 +14,9 @@ $card-hover-scale-max-times-multiplier: 5; //max number of times the base unit w
 
 $grid-columns-length-default : 4; //default number of columns for the bento-grid
 $grid-rows-length-default : 4; //default number of rows for the bento-grid
+
+$checkbox-border-color: #00a2ff;
+
+:export{
+    cardHoverScale: $card-hover-scale-base-unit;
+}
